@@ -9,57 +9,11 @@
     	<title>Parking Public Nantais</title>
     	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD7pMjqG06wkcqOtNIKtaZZhZxmx1v6x4Y"></script>
-    	<script>
-    		var lat = 47.218549;
-      		var lng = -1.544561;
-      		var myLatlng = new google.maps.LatLng(lat, lng);
-
-			function maPosition(position) {
-			  myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-			  var mapProp = {
-			    center:myLatlng,
-			    zoom:15,
-			    mapTypeId:google.maps.MapTypeId.ROADMAP
-			  };
-
-			  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-			  var marker = new google.maps.Marker({
-	          	position: myLatlng,
-	            title:"Vous êtes ici !"
-	          });
-
-	          marker.setMap(map);
-			}
-
-			function initialize() {
-			  var mapProp = {
-			    center:myLatlng,
-			    zoom:10,
-			    mapTypeId:google.maps.MapTypeId.ROADMAP
-			  };
-
-			  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-			  var marker = new google.maps.Marker({
-	          	position: myLatlng,
-	            title:"Vous êtes ici !"
-	          });
-
-	          marker.setMap(map);
-			}
-
-			if(navigator.geolocation)
-			  navigator.geolocation.getCurrentPosition(maPosition);
-
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
     </head>
     <body>
     	<div id="main" class="container text-center">
     		<h1>Trouvez un parking accessible le plus prêt !</h1>
-    		<form class="form form-inline">
+    		<form class="form form-inline" id="placesDispos">
     			Nombre de places: <SELECT name="places" size="1">
 					<OPTION>0 à 25
 					<OPTION>25 à 50
