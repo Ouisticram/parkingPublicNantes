@@ -8,4 +8,4 @@
 #Pour installer json-server :
 # npm install json-server
 # et pour le lancer :
-# $(npm bin)/json-server -f db.json -p 2707 
+# $(npm bin)/json-server db.json
